@@ -7,12 +7,14 @@ page, view, text, swiper, swiper-item, image, navigator{
 	margin: 0;
 	box-sizing: border-box;
 }
-
 page{
 	/* 主题色 */
 	--themeColor: #eb4450;
 	/* 字体大小 */
 	font-size: 28rpx;
+}
+image{
+	width: 100%;
 }
 
 

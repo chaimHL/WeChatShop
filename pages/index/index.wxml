@@ -4,14 +4,14 @@
 	<!-- banner -->
 	<view class="index-swiper">
 		<swiper 
-			autoplay 
-			indicator-dots 
-			interval="3000" 
-			indicator-color="#999"
-			indicator-active-color="#efefef">
+		autoplay 
+		indicator-dots 
+		interval="3000" 
+		indicator-color="#999"
+		indicator-active-color="#efefef">
 			<swiper-item
-				wx:for="{{swiperList}}"
-				wx:key="goods_id">
+			wx:for="{{swiperList}}"
+			wx:key="goods_id">
 				<navigator>
 					<image mode="widthFix" src="{{item.image_src}}"></image>
 				</navigator>
@@ -21,19 +21,19 @@
 	<!-- 导航 -->
 	<view class="index-cate">
 		<navigator 
-			wx:for="{{catesList}}"
-			wx:key="name">
+		wx:for="{{catesList}}"
+		wx:key="name">
 			<image src="{{item.image_src}}" mode="widthFix"></image>
 		</navigator>
 	</view>
 	<!-- 楼层 -->
 	<view class="index-floor">
 		<view 
-			class="floor-group" 
-			wx:for="{{floorList}}" 
-			wx:for-item="item1" 
-			wx:for-index="index1"
-			wx:key="floor_title">
+		class="floor-group" 
+		wx:for="{{floorList}}" 
+		wx:for-item="item1" 
+		wx:for-index="index1"
+		wx:key="floor_title">
 			<!-- 标题 -->
 			<view class="floor-title">
 				<image mode="widthFix" src="{{item1.floor_title.image_src}}"></image>
@@ -41,10 +41,10 @@
 			<!-- 内容 -->
 			<view class="floor-list">
 				<navigator 
-					wx:for="{{item1.product_list}}"
-					wx:for-item="item2"
-					wx:for-index="index2"
-					wx:key="name">
+				wx:for="{{item1.product_list}}"
+				wx:for-item="item2"
+				wx:for-index="index2"
+				wx:key="name">
 					<image mode="{{index2 === 0 ? 'widthFix' : 'scaleToFill'}}" src="{{item2.image_src}}"></image>
 				</navigator>
 			</view>
