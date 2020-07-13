@@ -1,2 +1,9 @@
 <!--pages/auth/index.wxml-->
-<text>pages/auth/index.wxml</text>
+<!-- 用户信息可以在bindgetuserinfo绑定的函数的回调里拿到 -->
+<button 
+type="primary" 
+plain 
+open-type="getUserInfo" 
+bindgetuserinfo="handleGetUserInfo">
+	获取授权
+</button>

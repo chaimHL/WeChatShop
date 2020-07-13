@@ -1,2 +1,43 @@
 <!--pages/goods_detail/index.wxml-->
-<text>pages/goods_detail/index.wxml</text>
+<view class="detail-swiper">
+	<swiper circular indicator-dots>
+		<swiper-item 
+		wx:for="{{goodsObj.pics}}"
+		wx:key="pics_id"
+		bindtap="handlePreviewImg"
+		data-url="{{item.pics_mid}}">
+			<image mode="aspectFill" src="{{item.pics_mid}}"></image>
+		</swiper-item>
+	</swiper>
+</view>
+<view class="goods-price">{{goodsObj.goods_price}}</view>
+<view class="goods-name-row">
+	<view class="goods-name">{{goodsObj.goods_name}}</view>
+	<view class="goods-collect">
+		<text class="iconfont icon-shoucang"></text>
+		<view class="collect-text">收藏</view>
+	</view>
+</view>
+<view class="goods-info">
+	<rich-text nodes="{{goodsObj.goods_introduce}}"></rich-text>
+</view>
+<view class="btm-tool">
+	<view class="tool-item">
+		<text class="iconfont icon-kefu"></text>
+		<view>客服</view>
+		<!-- 避免button的默认样式影响ui效果 -->
+		<button open-type="contact"></button>
+	</view>
+	<view class="tool-item">
+		<text class="iconfont icon-fenxiang"></text>
+		<view>分享</view>
+		<button open-type="share"></button>
+	</view>
+	<!-- 因为购物车页面是tabbar页面，所以要改open-type -->
+	<navigator open-type="switchTab" url="/pages/cart/index" class="tool-item">
+		<text class="iconfont icon-B"></text>
+		<view>购物车</view>
+	</navigator>
+	<view class="tool-item btn-cart" bindtap="handleAddCart">加入购物车</view>
+	<view class="tool-item btn-buy">立即购买</view>
+</view>
