@@ -1,1 +1,60 @@
 /* pages/feedback/index.wxss */
+.fb-main {
+  padding: 20rpx;
+}
+.fb-main .fb-title {
+  color: #666666;
+}
+.fb-main .tips-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.fb-main .tips-box text {
+  background-color: #FFFFFF;
+  padding: 20rpx;
+  margin: 12rpx 10rpx;
+  border: 1rpx solid #efefef;
+}
+.fb-main .fb-content {
+  background-color: #efefef;
+  margin-top: 20rpx;
+}
+.fb-main .fb-content textarea {
+  padding: 20rpx;
+}
+.fb-main .fb-content .fb-tool {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 20rpx;
+}
+.fb-main .fb-content .fb-tool button {
+  font-size: 60rpx;
+  background-color: #fff;
+  color: #CCCCCC;
+  width: 90rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2rpx dotted #CCCCCC;
+  margin: 0;
+  margin-left: 20rpx;
+}
+.fb-main .fb-content .fb-tool UpImg {
+  margin: 0 10rpx;
+}
+.fb-main .form-btn-box {
+  margin-top: 20rpx;
+}
+.fb-main .form-btn-box button {
+  width: 100%;
+  background-color: var(--themeColor);
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fb-main .form-btn-box button icon {
+  margin-right: 10rpx;
+}

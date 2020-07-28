@@ -15,13 +15,14 @@ Page({
 		this.getFloorList()
 	},
 	// 获取轮播图数据
-	getSwiperList() {
-		request({
-			url: '/home/swiperdata'
-		}).then(result => {
-			this.setData({
-				swiperList: result.data.message
-			})
+	async getSwiperList() {
+		const res = await request({ url: '/home/swiperdata' })
+		const swiperList = res.data.message.map(v => {
+			v.navigator_url = v.navigator_url.replace(/main/g, 'index')
+			return v
+		})
+		this.setData({
+			swiperList
 		})
 	},
 	// 获取导航数据
@@ -35,13 +36,18 @@ Page({
 		})
 	},
 	// 获取楼层数据
-	getFloorList() {
-		request({
-			url: '/home/floordata'
-		}).then(result => {
-			this.setData({
-				floorList: result.data.message
-			})
+	async getFloorList() {
+		const res = await request({ url: '/home/floordata'})
+		const floorList = res.data.message.map(v => {
+			v.product_list = v.product_list.map(x => {
+				x.navigator_url = x.navigator_url.replace(/\?/g, '/index?')
+				return x
+			}) 
+			return v
+		})
+		console.log(floorList)
+		this.setData({
+			floorList
 		})
 	}
 })

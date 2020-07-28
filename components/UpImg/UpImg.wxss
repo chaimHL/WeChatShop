@@ -1,0 +1,14 @@
+/* components/UpImg/UpImg.wxss */
+.up-img-box {
+  width: 90rpx;
+  height: 90rpx;
+  position: relative;
+}
+.up-img-box image {
+  height: 100%;
+}
+.up-img-box icon {
+  position: absolute;
+  top: -20rpx;
+  right: -20rpx;
+}

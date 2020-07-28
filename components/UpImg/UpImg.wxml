@@ -1,0 +1,8 @@
+<!--components/UpImg/UpImg.wxml-->
+<view class="up-img-box">
+	<image src="{{src}}"></image>
+	<icon 
+	type="clear" 
+	color="#eb4450" 
+	bindtap="handleRemoveImg"></icon>
+</view>

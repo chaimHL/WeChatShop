@@ -16,6 +16,10 @@ page{
 image{
 	width: 100%;
 }
+/* 主题色 */
+.theme-color{
+	color: var(--themeColor);
+}
 
 
 

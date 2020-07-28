@@ -1,2 +1,75 @@
 <!--pages/user/index.wxml-->
-<text>pages/user/index.wxml</text>
+<!-- 头像用户名区域 -->
+<view class="user-info-box">
+	<view class="user-img-box">
+		<image class="user-bg" src="{{userInfo.avatarUrl}}"></image>
+		<!-- 有个人信息就显示 -->
+		<view wx:if="{{userInfo.nickName}}" class="user-info">
+			<image class="user-icon" src="{{userInfo.avatarUrl}}"></image>
+			<view class="user-name">{{userInfo.nickName}}</view>
+		</view>
+		<!-- 没有就去获取 -->
+		<view wx:else class="user-btn">
+			<navigator url="/pages/login/index">登录</navigator>
+		</view>
+	</view>
+</view>
+<!-- 具体信息区域 -->
+<view class="user-box">
+	<view class="user-main">
+		<!-- 历史足迹 -->
+		<view class="user-history-box">
+			<navigator>
+				<view class="his-num">0</view>
+				<view class="his-text">收藏的店铺</view>
+			</navigator>
+			<navigator url="/pages/collect/index">
+				<view class="his-num">{{collectNums}}</view>
+				<view class="his-text">收藏的商品</view>
+			</navigator>
+			<navigator>
+				<view class="his-num">0</view>
+				<view class="his-text">关注的店铺</view>
+			</navigator>
+			<navigator>
+				<view class="his-num">0</view>
+				<view class="his-text">我的足迹</view>
+			</navigator>
+		</view>
+		<!-- 我的订单 -->
+		<view class="user-order-box">
+			<view class="order-title">我的订单</view>
+			<view class="order-item">
+				<navigator url="/pages/order/index?type=1">
+					<text class="iconfont icon-dingdan"></text>
+					<view class="order-text">全部订单</view>
+				</navigator>
+				<navigator url="/pages/order/index?type=2">
+					<text class="iconfont icon-fukuantongzhi"></text>
+					<view class="order-text">待付款</view>
+				</navigator>
+				<navigator url="/pages/order/index?type=3">
+					<text class="iconfont icon-shouhuodizhi"></text>
+					<view class="order-text">待收货</view>
+				</navigator>
+				<navigator>
+					<text class="iconfont icon-tuikuan"></text>
+					<view class="order-text">退款/退货</view>
+				</navigator>
+			</view>
+		</view>
+		<!-- 收货地址 -->
+		<view class="order-address">收货地址管理</view>
+		<!-- 联系客服 意见反馈 关于我们 -->
+		<view class="app-info-box">
+			<view class="app-item app-contact">
+				<text>联系客服</text>
+				<text>400-800-8080</text>
+			</view>
+			<navigator url="/pages/feedback/index" class="app-item">意见反馈</navigator>
+			<view class="app-item">关于我们</view>
+		</view>
+		<!-- 推荐 -->
+		<view class="app-share">把应用推荐给小伙伴</view>
+	</view>
+</view>

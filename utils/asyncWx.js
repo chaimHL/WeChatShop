@@ -107,4 +107,38 @@ export const requestPayment = (pay) => {
 	})
 }
 
+// Promise形式的chooseImage
+export const chooseImage = () => {
+	return new Promise((resolve, reject) => {
+		wx.chooseImage({
+			count: 9,
+			sizeType: ['original', 'compressed'],
+			sourceType: ['album', 'camera'],
+			success: (result) => {
+				resolve(result)
+			},
+			fail: (err) => {
+				reject(err)
+			}
+		})
+	})
+}
+
+// Promise形式的uploadFile
+export const uploadFile = (fileObj) => {
+	return new Promise((resolve, reject) => {
+		wx.uploadFile({
+			...fileObj,
+			success (result){
+				resolve(result)
+			},
+			fail: (err) => {
+				reject(err)
+			}
+		})
+	})
+}
+
+
+
 
